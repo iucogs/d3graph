@@ -1,0 +1,632 @@
+
+$iu-red: #7d110c
+$dark-gray: #292929
+$light-gray: #7C7C7C
+
+$content-width: 800px
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-serif:       Georgia, "Times New Roman", Times, serif
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
+$font-family-base:        $font-family-sans-serif
+$font-family-lobster:     "Lobster", cursive
+$font-family-arch:        "Architects Daughter", cursive
+
+$font-size-base:          14px
+$font-size-large:         ceil(($font-size-base * 1.14)) // ~14px
+$font-size-larger:        ceil(($font-size-base * 1.25)) // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) // ~12px
+$font-size-tiny:          ceil(($font-size-base * 0.7)) // ~12px
+
+$font-size-h1:            floor(($font-size-base * 3)) // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) // ~18px
+$font-size-h5:            $font-size-base
+$font-size-h6:            ceil(($font-size-base * 0.85)) // ~12px
+
+$line-height-base:        1.428571429 // 20/14
+$line-height-computed:    floor(($font-size-base * $line-height-base)) // ~20px
+
+$headings-font-family:    inherit
+$headings-font-weight:    500
+$headings-line-height:    1.1
+$headings-color:          inherit
+
+$top-bar-transition: height 0.1s ease-out, line-height 0.1s ease-out, margin-top 0.1s ease-out
+
+*
+  font-size: $font-size-base
+
+h1
+  font-size: $font-size-h1
+
+h2
+  font-size: $font-size-h2
+
+h3
+  font-size: $font-size-h3
+
+h4, h4 i
+  font-size: $font-size-h4
+
+h5
+  font-size: $font-size-h5
+
+h6
+  font-size: $font-size-h6
+
+p
+  font-size: $font-size-base
+  padding-bottom: 20px
+
+a
+  color: $iu-red
+  font-weight: bold
+a:hover
+  color: $iu-red
+
+@mixin clearfix
+  overflow: auto
+
+body
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+
+#branding-bar
+  margin-bottom: 1px
+
+#top-bar-wrapper
+  width: 100%
+  background-color: rgba($dark-gray, 0.8)
+  height: 80px
+  position: relative
+  z-index: 100
+  transition: $top-bar-transition
+
+.is-sticky, .mini
+  #top-bar-wrapper
+    height: 50px
+
+#top-bar
+  padding: 10px 0
+  width: $content-width
+  margin: 0 auto
+  height: 30px
+
+  .top-bar-panel
+    width: 250px
+    float: left
+
+  .top-bar-panel.panel-center
+    height: 20px
+    width: 300px
+
+  .top-bar-panel-link
+    width: 120px
+    float: left
+
+  .top-bar-panel-link:first-child
+    margin-right: 10px
+
+  .top-bar-panel-link
+    height: 60px
+    line-height: 60px
+    background-color: $light-gray
+    font-size: 12px
+    text-align: center
+    transition: $top-bar-transition
+    font-family: $font-family-serif
+    a
+      color: white
+
+  .menu, .menu-btn
+    display: none
+
+.is-sticky, .mini
+  #top-bar
+    .top-bar-panel-link
+      height: 30px
+      line-height: 30px
+
+$logo-width: 240px
+$logo-title-width: 200px
+
+#logo
+  opacity: 1
+  position: relative
+  width: $logo-width
+  margin: 0 auto
+  margin-top: 15px
+
+  *
+    font-family: $font-family-serif
+
+  .logo-right, .logo-right-top, .logo-left, .logo-left-top, .logo-title
+    position: absolute
+
+  .logo-left
+    height: 0
+    width: 0
+    border-top: 15px solid #6d110c
+    border-bottom: 15px solid #6d110c
+    border-left: 10px solid transparent
+    border-right: 38px solid #6d110c
+    left: 0px
+    top: 0
+
+  .logo-right
+    height: 0
+    width: 0
+    border-top: 15px solid #6d110c
+    border-bottom: 15px solid #6d110c
+    border-right: 10px solid transparent
+    border-left: 38px solid #6d110c
+    right: 0px
+    top: 0
+
+  .logo-left-top
+    height: 30px
+    width: 30px
+    background-color: #B82F30
+    top: 4px
+    left: 24px
+    transform: rotate(-20deg)
+    -webkit-transform: rotate(-20deg)
+
+  .logo-right-top
+    height: 30px
+    width: 30px
+    background-color: #B82F30
+    top: 4px
+    right: 24px
+    transform: rotate(20deg)
+    -webkit-transform: rotate(20deg)
+
+  .logo-title
+    margin-top: 10px
+    width: $logo-title-width
+    background-color: $iu-red
+    color: white
+    box-shadow: 0 2px 5px #222
+    top: 0px
+    left: ($logo-width - $logo-title-width)/2
+    overflow: hidden
+    height: 106px
+    transition: $top-bar-transition
+
+    a
+      color: white
+
+
+    .logo-title-text
+      margin: 5px auto
+      text-align: center
+
+    .logo-title-years
+      font-size: 30px
+
+#top-bar-wrapper-sticky-wrapper.is-sticky, .mini
+  #logo
+    margin-top: 0px
+    .logo-title
+      height: 30px
+
+#main
+  width: 100%
+
+#cover
+  width: 100%
+  height: 700px
+  background: url(../images/bg-cover.jpg) no-repeat center center
+  background-size: cover
+  margin-top: -80px
+
+  .note-wrapper
+    width: 400px
+    margin: 0 auto
+    padding-top: 300px
+
+    .note
+      font-size: $font-size-larger
+      text-align: center
+      height: 140px
+      line-height: 140px
+      background-color: white
+      color: #777
+      border: 1px solid #777
+      opacity: 0.9
+      font-family: $font-family-lobster
+
+.content-container
+  width: $content-width
+  margin: 0 auto
+
+.content-title
+  text-align: center
+  color: $iu-red
+  border-bottom: 1px solid #DDD
+  padding-top: 50px
+  padding-bottom: 30px
+  margin-bottom: 30px
+  background-color: white
+  font-family: $font-family-lobster
+
+.is-sticky, .mini
+  .content-title
+    margin-top: 50px
+    box-shadow: 0 1px 1px #d5d5d5
+
+.content-body
+  margin-bottom: 100px
+
+
+.scroll-content
+  width: 100%
+  height: 600px
+  overflow: hidden
+  position: relative
+  z-index: 98
+
+.scroll-content-image
+  width: 100%
+  height: 1000px
+  position: absolute
+  left: 0
+  top: -725px
+
+#navigation, #sidebar
+  position: fixed
+  top: 150px
+  background-color: white
+  border: 2px solid #bbb
+  z-index: 100
+
+
+#sidebar
+  width: 180px
+  padding: 5px
+
+  .cover
+    width: 100%
+
+  .contact, .welcome, .director, .give-now, .contact a
+    font-size: $font-size-small
+
+  .contact, .welcome, .give-now
+    padding: 20px 0
+
+  .director
+    text-align: center
+    font-style: italic
+    font-family: $font-family-arch
+
+  .give-now
+    div
+      width: 100px
+      margin: 0 auto
+
+  .contact
+    text-align: center
+
+$nav-btn-height: 80px
+
+#navigation
+  width: 180px
+  ul
+    list-style: none
+  .button
+    height: $nav-btn-height
+    cursor: pointer
+
+    .title
+      height: 36px
+      line-height: 36px
+      background-color: #5d110c
+      color: white
+      margin-top: ($nav-btn-height - 36px)/2
+      padding: 0 5px
+      float: left
+      font-family: $font-family-serif
+
+  .button:hover, .button.active
+    .title
+      background: $iu-red
+
+
+
+  .button.item-schedule
+    background: url(../images/btn-cover-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-schedule:hover, .button.item-schedule.active
+    background: url(../images/btn-cover.jpg) no-repeat center center
+
+  .button.item-speakers
+    background: url(../images/btn-speakers-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-speakers:hover, .button.item-speakers.active
+    background: url(../images/btn-speakers.jpg) no-repeat center center
+
+
+  .button.item-registration
+    background: url(../images/btn-registration-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-registration:hover, .button.item-registration.active
+    background: url(../images/btn-registration.jpg) no-repeat center center
+
+
+  .button.item-history
+    background: url(../images/btn-history-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-history:hover, .button.item-history.active
+    background: url(../images/btn-history.jpg) no-repeat center center
+
+  .button.item-fund
+    background: url(../images/btn-fund-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-fund:hover, .button.item-fund.active
+    background: url(../images/btn-fund.jpg) no-repeat center center
+
+  .button.item-poster
+    background: url(../images/btn-poster-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-poster:hover, .button.item-poster.active
+    background: url(../images/btn-poster.jpg) no-repeat center center
+
+  .button.item-locations
+    background: url(../images/btn-locations-bw.jpg) no-repeat center center
+    background-size: cover
+
+  .button.item-locations:hover, .button.item-locations.active
+    background: url(../images/btn-locations.jpg) no-repeat center center
+
+#content-schedule
+  .date
+    font-weight: bold
+    padding: 20px 0
+  .range
+    width: 120px
+    vertical-align: middle
+    text-align: center
+  .time
+    width: 150px
+    text-align: center
+  .time-location
+    margin-top: 5px
+    border-top: 1px dotted #DDD
+    padding-top: 5px
+    font-style: italic
+
+#content-speakers
+  .headshot
+    img
+      width: 120px
+      height: 120px
+      margin-right: 50px
+  td
+    padding: 20px
+
+  h2
+    margin: 50px 0
+
+
+#content-registration
+  .table
+    margin-top: 50px
+    border: 1px solid #ddd
+    td
+      padding: 15px 10px
+
+  .description
+    float: none
+    width: 100%
+    margin-top: 50px
+
+  ul
+    padding-left: 30px
+    li
+      font-size: $font-size-base
+      padding: 5px 0
+
+  .register
+    margin: 50px 0
+    width: 100%
+
+    a:hover
+      text-decoration: none
+
+    .btn
+      width: 200px
+      height: 80px
+      margin: 0 auto
+      background-color: $iu-red
+      font-family: $font-family-arch
+      font-size: $font-size-larger
+
+
+#content-history
+  .table
+    .year
+      width: 150px
+      text-align: center
+      vertical-align: middle
+    td
+      padding: 10px 10px
+
+    border: 1px solid #ddd
+
+#content-fund
+  .give-now
+    float: right
+    margin: 0px 0 20px 50px
+
+    .headshot
+      width: 200px
+      img
+        width: 200px
+
+    .button
+      padding-top: 30px
+      width: 120px
+      margin: 0 auto
+      img
+        width: 100%
+
+#top-bar .menu-btn
+  padding-left: 20px
+  a
+    line-height: 30px
+    font-size: 20px
+    color: white
+  a:hover
+    text-decoration: none
+
+#top-bar .menu
+  position: absolute
+  top: 0
+  left: 0
+  background-color: #444
+  width: 100%
+  padding-top: 10px
+  a.close-btn
+    line-height: 30px
+    font-size: 20px
+    color: white
+    padding-left: 20px
+  a.close-btn:hover
+    text-decoration: none
+  .items, .links
+    padding: 10px 0
+    div, a
+      width: 100%
+      color: white
+    a:hover
+      text-decoration: none
+      font-size: $font-size-larger
+    div
+      padding: 5px 20px
+    a.active div
+      background-color: #333
+
+@media screen and (max-device-width: 900px), screen and (max-width: 900px)
+  #sidebar, #navigation, .top-bar-panel-link
+    display: none
+
+  #logo
+    margin-top: 0
+
+
+  #top-bar-wrapper
+    height: 50px
+
+  #top-bar
+    width: 100%
+    height: 50px
+
+    .panel-center
+      margin: 0 auto
+      float: none
+
+    .navbar
+      display: block
+
+  .content-container
+    width: 100%
+    padding: 0 50px
+
+  .content-title
+    h1
+
+  #cover
+    margin-top: 0
+
+  #content-schedule
+    border: none
+
+  #content-speakers
+    .headshot
+      img
+        width: 80px
+        height: 80px
+        margin-right: 0
+
+    td
+      padding: 5px
+
+  .scroll-content, .scroll-content-image
+    height: 400px
+    top: 0 !important
+
+  #content-registration
+
+  #content-fund
+    .give-now
+      float: none
+      width: 100%
+      margin: 0
+      .headshot
+        margin: 0 auto
+      .button
+        padding: 10px 0
+
+  #top-bar .menu-btn
+    display: block
+  #top-bar .menu-btn
+    padding-left: 50px
+  #top-bar .menu
+    a.close-btn
+      padding-left: 50px
+    .items, .links
+      div
+        padding: 10px 50px
+
+  #main
+    border-bottom: 3px solid $iu-red
+
+@media screen and (max-device-width: 500px), screen and (max-width: 500px)
+  #logo
+    width: 180px
+    .logo-title
+      width: 140px
+  .content-container
+    padding: 0 20px
+  #content-schedule
+    td.range
+      display: none
+    td.time
+      width: 120px
+  #content-history
+    .table
+      td.year
+        width: 80px
+  .table td, .table td a, .table td div, .table td strong
+    font-size: $font-size-tiny
+
+  #top-bar .menu-btn
+    padding-left: 20px
+  #top-bar .menu
+    a.close-btn
+      padding-left: 20px
+    .items, .links
+      div
+        padding: 5px 20px
+  #cover
+    .note-wrapper
+      padding-top: 150px
+      width: 300px
+      .note
+        font-size: $font-size-large
+
+
+body:after
+  display: none
+  // Preload images
+  content: url(../images/btn-cover.jpg) url(../images/btn-speakers.jpg) url(../images/btn-registration.jpg) url(../images/btn-history.jpg) url(../images/btn-fund.jpg) url(../images/btn-poster.jpg) url(../images/btn-locations.jpg)

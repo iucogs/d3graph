@@ -1,0 +1,558 @@
+
+
+<!doctype html>
+<html>
+<head>
+<title>Hello </title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="target-densitydpi=device-dpi" />
+<meta name="HandheldFriendly" content="true"/>
+
+<!-- BEGIN INDIANA UNIVERSITY BRANDING BAR AND FOOTER <HEAD> ELEMENTS -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="./_iu-brand/css/base.css" rel="stylesheet" type="text/css" />
+<link href="./_iu-brand/css/wide.css" media="(min-width: 900px)" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="./bower/octicons/octicons/octicons.css">
+<!--[if (lte IE 8) & (!IEMobile)]>
+  <link href="./_iu-brand/css/fixed.css" media="screen" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<!--[if IE 7]>
+  <link href="./_iu-brand/css/ie7.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<!--[if IE 6]>
+  <link href="./_iu-brand/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <!-- END INDIANA UNIVERSITY BRANDING BAR AND FOOTER <HEAD> ELEMENTS -->
+
+
+<link href='http://fonts.googleapis.com/css?family=Lobster|Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel=stylesheet href="./bower/bootstrap/dist/css/bootstrap.min.css" type='text/css'>
+<link rel=stylesheet href="./stylesheets/fixes.css" type='text/css'>
+<link rel=stylesheet href="./stylesheets/app.css" type='text/css'>
+<link rel=stylesheet href="./stylesheets/graph.css" type='text/css'>
+<link rel=stylesheet href="./stylesheets/sidebar.css" type='text/css'>
+<link rel=stylesheet href="./bower/hint.css/hint.css" type='text/css'>
+</head>
+<body>
+
+<!-- BEGIN INDIANA UNIVERSITY BRANDING BAR -->
+<div id="branding-bar">
+<div class="bar">
+  <div class="wrapper">
+    <p class="campus">
+      <a href="http://www.iub.edu/">
+        <img src="./_iu-brand/img/trident-tab.gif" height="73" width="64" alt=" " />
+        <span class="line-break">Indiana University</span> Bloomington
+      </a>
+    </p>
+  </div>
+</div>
+</div>
+<!-- END INDIANA UNIVERSITY BRANDING BAR -->
+
+<!-- Begin of Top Bar -->
+<div class="mini">
+<div id="top-bar-wrapper">
+<div id="top-bar">
+  <div class="top-bar-panel panel-left">
+  </div>
+
+  <div class="top-bar-panel panel-center">
+    <div id="logo">
+      <div class="logo-left"></div>
+      <div class="logo-left-top"></div>
+
+      <div class="logo-right"></div>
+      <div class="logo-right-top"></div>
+
+      <div class="logo-title">
+        <a href="http://www.cogs.indiana.edu/">
+          <div class="logo-title-text">Cognitive Science</div>
+          <div class="logo-title-text logo-title-years">25th</div>
+          <div class="logo-title-text">Anniversary</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-bar-panel panel-right">
+  </div>
+</div>
+</div>
+</div>
+
+<div id="main">
+   <div id="wrapper" class="toggled">
+      <div id="sidebar-wrapper"><div id="filters" class="no-select opened"></div></div>
+      <div id="page-content-wrapper">
+         <div class="container-fluid">
+            <div id="unsupported" class="hidden">
+               <p>Sorry, your browser is currently not supported. Please visit this page with one of the following browsers:</p>
+               <p>* Chrome (version >= 30)</p>
+               <p>* Safari (version >= 7)</p>
+               <p>* Firefox (version >= 25)</p>
+               <p>* IE (version >= 9)</p>
+            </div>
+            <div id="loading"></div>
+            <div id="graph">
+               <div class="svg"></div>
+               <div id="search">
+                  <div class="input pannel input-group">
+                     <a href="#menu-toggle" class="btn btn-default input-group-addon" id="menu-toggle">
+                     <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                     </a>
+                     <input class="no-focus" type="text" placeholder="Search Author"></input>
+                     <button class="clear-input no-focus empty-btn"><span class="octicon octicon-x"></span></button>
+                  </div>
+                  <div class="results pannel">
+                  </div>
+                  <div class="profile pannel">
+                     <div class="button close"><a href="#"><span class="octicon octicon-x"></span></a></div>
+                     <div class="content">
+                     </div>
+                  </div>
+               </div>
+               <div id="zoom" class="pannel no-select">
+                  <!-- <div class="display"><span class="number">100</span><div class="sign">%</div></div> -->
+                  <div class="button zoom-in"><span class="octicon octicon-plus"></span></div>
+                  <div class="button zoom-out"><span class="octicon octicon-dash"></span></div>
+                  <div class="button reset"><span class="octicon octicon-primitive-dot"></span></span></div>
+               </div>
+               <div id="help" class="clearfix no-select">
+                  <div class="rounded-button pannel">?</div>
+               </div>
+               <div id="status" class="pannel no-select">
+<!--                  <div class="status-show-options-btn opened">
+                     <span class="octicon octicon-chevron-down"></span>
+                     <span class="octicon octicon-chevron-up"></span>
+                  </div>-->
+                  <div class="info">
+                  </div>
+               </div>
+               <div id="legend">
+               </div>
+            </div>
+         </div>
+         <!-- BEGIN INDIANA UNIVERSITY FOOTER -->
+         <div id="footer" role="contentinfo" class="hidden">
+            <div class="wrapper">
+               <p class="internal"><a href="#">Privacy Notice</a></p>
+               <p class="copyright">
+                  <a href="http://www.iu.edu/" class="block-iu"><img src="./_iu-brand/img/block-iu.png" height="26" width="22" alt="Block IU" /></a>
+                  <span class="line-break">
+                     <a href="http://www.iu.edu/copyright/index.shtml">Copyright</a> &#169;
+                     <script type="text/javascript">
+                        var theDate=new Date()
+                        document.write(theDate.getFullYear())
+                     </script>
+                  </span>
+                  <span class="line-break">The Trustees of <a href="http://www.iu.edu/">Indiana University</a>,</span>
+                  <span class="line-break"><a href="http://www.iu.edu/copyright/complaints.shtml">Copyright Complaints</a></span>
+               </p>
+            </div>
+         </div>
+         <!-- END INDIANA UNIVERSITY FOOTER -->
+      </div>
+   </div>
+</div>
+
+
+
+
+<div id="detailed-profile"></div>
+<script id="detailed-profile-template" type="text/x-handlebars-template">
+<div class="modal bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="octicon octicon-x"></span>
+        </button>
+        <div class="author clearfix">
+          <div class="headshot" style="background: url('{{headshotUrl}}') center center no-repeat; background-size: 100%;"></div>
+          <div class="info">
+            <h2>{{name}}</h2>
+            <p>{{department}}</p>
+            <p>
+            {{#if profileLink}}
+              <a href="{{profileLink}}">Profile</a>
+            {{else}}
+              <a href="mailto:{{email}}">{{email}}</a>
+            {{/if}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="citations">
+        <h3 class="modal-title" id="myLargeModalLabel">Representative Publications</h3>
+        <div class="citations-section hidden">
+          {{#each repPublications}}
+            <p>{{{apa}}}</p>
+          {{else}}
+            <p>No publications found.</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<div id="detailed-link"></div>
+<script id="detailed-link-template" type="text/x-handlebars-template">
+<div class="modal bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="octicon octicon-x"></span>
+        </button>
+        <div class="clearfix">
+          {{#each authors}}
+          <div class="author clearfix">
+            <div class="headshot" style="background: url('{{headshotUrl}}') center center no-repeat; background-size: 100%;"></div>
+            <div class="info">
+              <h2>{{name}}</h2>
+              <p>{{department}}</p>
+              <p>
+                {{#if profileLink}}
+                <a href="{{profileLink}}">Profile</a>
+                {{else}}
+                  <a href="mailto:{{email}}">{{email}}</a>
+                {{/if}}
+              </p>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="citations hidden">
+        {{#if citations}}
+        <h3 class="modal-title" id="myLargeModalLabel">Co-authored Publications</h3>
+        <div class="citations-section">
+          {{#each citations}}
+          <p>{{{apa}}}</p>
+          {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if committees}}
+        <h3 class="modal-title" id="myLargeModalLabel">Dissertation Committees</h3>
+        <div class="citations-section">
+          {{#each committees}}
+            <p><strong>{{title}}</strong><br/>{{author}} (Author)<br/>{{members}}</p>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<!-- BEGIN TEMPLATES -->
+<script id="loading-template" type="text/x-handlebars-template">
+<div class="wrapper">
+  <div class="bar-wrapper"><div class="bar">
+  </div></div>
+  <p>loading {{nodesLength}} authors</p>
+</div>
+</script>
+
+<script id="results-template" type="text/x-handlebars-template">
+{{#each authors}}
+  <div class="item clearfix no-select" data-author-name="{{name}}">
+    <div class="headshot img-circle" style="background:url('{{headshots.imageUrl}}') no-repeat;background-size: {{headshots.colums}}00% {{headshots.rows}}00%; background-position: {{headshot.positionX}}% {{headshot.positionY}}%; border: 2px solid {{styles.circleStroke}}"></div>
+
+    {{#if searchDept}}
+    <div class="name_dept">
+      <div class="name">
+        {{#each searchName}}<span class="{{#if isMatch}}match{{/if}}">{{text}}</span>{{/each}}
+      </div>
+      <div class="dept">
+        {{#each searchDept}}<span class="{{#if isMatch}}match{{/if}}">{{text}}</span>{{/each}}
+      </div>
+    </div>
+    {{else}}
+      <div class="name">
+        {{#each searchName}}<span class="{{#if isMatch}}match{{/if}}">{{text}}</span>{{/each}}
+      </div>
+    {{/if}}
+  </div>
+{{else}}
+  <div class="item clearfix no-select"><i>No Match</i></div>
+{{/each}}
+</script>
+
+<script id="profile-template" type="text/x-handlebars-template">
+<div class="author clearfix" data-id="{{id}}">
+  <div class="headshot" style="background: url('{{headshotUrl}}') center center no-repeat; background-size: 100%;"></div>
+  <div class="info">
+    <h2>{{name}}</h2>
+    {{#if titles}}
+      <p>{{titles}}{{#if department}}, {{department}}{{/if}}</p>
+    {{else}}
+      <p>{{department}}</p>
+    {{/if}}
+    <p>
+      {{#if profileLink}}
+        <a href="{{profileLink}}">Profile</a>
+      {{else}}
+        <a href="mailto:{{email}}">{{email}}</a>
+      {{/if}}
+    </p>
+  </div>
+</div>
+{{#if relations}}
+  <div class="collaborators clearfix">
+    <h3>Collaborators</h3>
+    {{#each relations}}
+    <div data-id="{{link.id}}" class="headshot img-circle" style="background:url('{{author.headshots.imageUrl}}') no-repeat;background-size: {{author.headshots.colums}}00% {{author.headshots.rows}}00%; background-position: {{author.headshot.positionX}}% {{author.headshot.positionY}}%; border: 2px solid {{author.styles.circleStroke}}"></div>
+    {{/each}}
+  </div>
+{{/if}}
+<div class="citations">
+  <h3>Representative Publications</h3>
+  {{#if hasMoreRepPublications}}<a href="#" class="more">More</a>{{/if}}
+  <div class="citations-section">
+    {{#each topRepPublications}}
+      <div class="citation">
+      <p>{{{apa}}}</p>
+      </div>
+    {{else}}
+      <div class="citation">
+        <p><i>No publications found.</i></p>
+      </div>
+    {{/each}}
+  </div>
+</div>
+</script>
+
+<script id="citations-template" type="text/x-handlebars-template">
+{{#each authors}}
+<div class="author clearfix" data-id="{{id}}">
+  <div class="headshot" style="background: url('{{headshotUrl}}') center center no-repeat; background-size: 100%;"></div>
+  <div class="info">
+    <h2>{{name}}</h2>
+    <p>{{department}}</p>
+    <p>
+      {{#if profileLink}}
+        <a href="{{profileLink}}">Profile</a>
+      {{else}}
+        <a href="mailto:{{email}}">{{email}}</a>
+      {{/if}}
+    </p>
+  </div>
+</div>
+{{/each}}
+{{#if topCitations}}
+<div class="citations">
+  <h3>Co-authored Publications</h3>
+  {{#if hasMoreCoPublications}}<a href="#" class="more">More</a>{{/if}}
+  {{#each topCitations}}
+  <div class="citation">
+    <p>{{{apa}}}</p>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+{{#if committees}}
+  <div class="citations">
+  {{#if hasMoreCommittees}}<a href="#" class="more">More</a>{{/if}}
+-     {{#each committees}}
+-          <p><strong>{{title}}</strong><br/>{{author}} (Author)<br/>{{members}}</p>
+-     {{/each}}
+  </div>
+{{/if}}
+{{#if advCommittees}}
+<div class="citations">
+<h3>Advisor/ Advisee</h3>
+{{#each advCommittees}}
+  <p>
+  <strong>Chair: </strong>{{chair}}<br/>
+  <strong>Advisee: </strong> {{advisee}}<br/>
+  <strong>{{title}}</strong><br/>
+  {{members}}
+  </p>
+{{/each}}
+</div>
+{{/if}}
+</script>
+
+<script id="legend-template" type="text/x-handlebars-template">
+Indiana University - Cognitive Science - 2015
+</script>
+
+<script id="graph-headshots-template" type="text/x-handlebars-template">
+<svg>
+<defs>
+<defs>
+  {{#each headshots}}
+  <pattern patternTransform="translate({{translateX}}, {{translateY}})" id="headshot-{{username}}" patternUnits="userSpaceOnUse" width="{{../width}}" height="{{../height}}">
+    <image xlink:href="{{../imageUrl}}"
+      width="{{../width}}" height="{{../height}}" />
+  </pattern>
+  {{/each}}
+</defs>
+</defs>
+</svg>
+</script>
+
+<script id="status-info-template" type="text/x-handlebars-template">
+{{#if nothing}}
+No user matches the current settings.
+{{else}}
+Showing
+{{#each commas}}
+  <span class="status color-{{type}}">{{title}}</span>,
+{{/each}}
+<span class="status color-{{last.type}}">{{last.title}}</span>
+{{/if}}
+</script>
+
+<script id="testTemplate" type="text/x-handlebars-template">
+  <div class="button close"><a href="#"><span class="octicon octicon-x"></span></a></div>
+<div class="users filters-section2">
+{{#each d}}
+{{#if @first}}
+    <div id="test-{{code}}">
+        <p>Code: {{code}}</p>
+        <div class="count"></div>
+    </div>
+{{/if}}	
+{{/each}}
+</div>
+</script>
+
+
+<script id="filter-options-template" type="text/x-handlebars-template">
+<div class="users filters-section">
+  <h3>Users</h3>
+  <div class="clearfix"></div>
+  <div class="options">
+    {{#each status}}
+    <span class="status bg-color-{{type}} filter-{{type}}" data-type="{{type}}">{{title}} <span class="count">{{count}}</span></span>
+    {{/each}}
+  </div>
+</div>
+<div class="departments filters-section">
+  <h3>Departments</h3>
+  <!-- <input class="search" type="text"></input> -->
+  <div class="options">
+    <div class="department-checkbox all">
+      <input type="checkbox" value="all" checked="checked" id="input-filter-all"/>
+      <div class="title"><label for="input-filter-all">All</label></div>
+    </div>
+    {{#each departments}}
+    <div class="department-checkbox filter-{{code}}">
+      <input type="checkbox" value="{{code}}" checked="checked" id="input-filter-{{code}}"/>
+      <div class="title"><label for="input-filter-{{code}}">{{title}} <span class="count">{{count}}</span></label></div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+</script>
+
+<div id="help-dialog"></div>
+<script id="help-template" type="text/x-handlebars-template">
+<div class="modal bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="octicon octicon-x"></span>
+      </button>
+      <div class="content ">
+        <h3>Users</h3>
+        <div class="users section clearfix">
+          <div class="circle circle-faculty"></div>
+          <span class="color-faculty">Faculty</span>
+          <div class="circle circle-alumni"></div>
+          <span class="color-alumni">Alumni</span>
+          <div class="circle circle-grad"></div>
+          <span class="color-grad">Grad Students</span>
+          <div class="circle circle-undergrad"></div>
+          <span class="color-undergrad">Undergraduate Students</span>
+        </div>
+        <h3>Relations</h3>
+        <div class="relations section">
+          <div class="relation clearfix">
+            <div class="circle"></div>
+            <svg> <line x1="0" y1="15" x2="150" y2="15" stroke="#DDD" stroke-width="4"></line> </svg>
+            <div class="circle"></div>
+            <div class="text">Co-Authored</div>
+          </div>
+
+          <div class="relation clearfix">
+            <div class="circle"></div>
+            <svg> <line x1="0" y1="15" x2="150" y2="15" stroke="#DDD" stroke-width="4" stroke-dasharray="10,5"></line> </svg>
+            <div class="circle"></div>
+            <div class="text">Dissertation Committees</div>
+          </div>
+
+          <div class="relation clearfix">
+            <div class="circle"></div>
+            <svg> <line x1="0" y1="15" x2="150" y2="15" stroke="#DDD" stroke-width="4" stroke-dasharray="20,3,3,3,3,3"></line> </svg>
+            <div class="circle"></div>
+            <div class="text">Co-Authored & Dissertation Committees</div>
+          </div>
+        </div>
+
+        <div class="screenshot section">
+          <img src="./images/graph/help-screenshot.png"></img>
+          <span style="top:47px;left:215px" class="pointer hint--top" data-hint="Click to toggle users by status"></span>
+          <span style="top:47px;left:245px" class="pointer hint--top" data-hint="User count"></span>
+
+          <span style="top:185px;left:220px" class="pointer hint--top" data-hint="Click to toggle users by departments"></span>
+          <span style="top:185px;left:258px" class="pointer hint--top" data-hint="User count"></span>
+
+          <span style="top:332px;left:470px" class="pointer hint--top" data-hint="Reset zoom to 100%"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<!-- END TEMPLATES -->
+
+
+<script type="text/javascript">
+// IE Fixes
+(function() {
+  var noop = function () {};
+  var methods = [
+      'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+      'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+      'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+      'timeStamp', 'trace', 'warn'
+  ];
+  var length = methods.length;
+  var console = (window.console = window.console || {});
+
+  while (length--) {
+    var method = methods[length];
+    console[method] = console[method] || noop;
+  }
+}());
+</script>
+<script src="./bower/jquery/dist/jquery.min.js" type='text/javascript'></script>
+<script src="./bower/bootstrap/dist/js/bootstrap.min.js" type='text/javascript'></script>
+<script src="./bower/jquery-sticky/jquery.sticky.js" type='text/javascript'></script>
+<script src="./bower/d3/d3.js" type='text/javascript'></script>
+<script src="./bower/handlebars/handlebars.js"></script>
+<script src="./bower/notify-combined.min.js"></script>
+<script src="./bower/mustache/mustache.min.js"></script>
+<script src="./bower/EventEmitter.js/EventEmitter.min.js" type='text/javascript'></script>
+<script src="./javascripts/d3-relational-graph/d3-relational-graph.js" type='text/javascript'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js" type='text/javascript'></script>
+<script src="./javascripts/apa.js" type='text/javascript'></script>
+<script src="./javascripts/graph.js" type='text/javascript'></script>
+</body>
+</html>
